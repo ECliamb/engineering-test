@@ -1,0 +1,39 @@
+version: '3'
+services:
+  eurocamp-db:
+    image: postgres:14-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: eurocamp_api
+    ports:
+      - 5433:5432
+    volumes:
+      - ./eurocamp-data:/var/lib/postgresql/data
+
+  # eurocamp-redis:
+  #   image: redis:6.2.5-alpine
+  #   restart: unless-stopped
+  #   ports:
+  #     - 6379:6379
+  #   volumes:
+  #     - ./eurocamp-redis-data:/data
+
+  eurocamp-api:
+    build:
+      context: .
+      dockerfile: './apps/engineering/Dockerfile.dev'
+    links:
+      - eurocamp-db
+    environment:
+      - DB_HOST=eurocamp-db
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_NAME=eurocamp_api
+
+    ports:
+      - 3001:8080
+    depends_on:
+      - eurocamp-db
