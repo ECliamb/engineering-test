@@ -24,8 +24,17 @@ Please follow the installation instructions carefully and don't spend any more t
 2. `cd` into the engineering-test directory
 3. run `docker-compose up -d --force-recreate`
 4. run `docker exec -it engineering-test_eurocamp-api_1 npm run seed:run`
-5. Check that there is data in the database tables (see .env for connection details). Also review the api documentation at http://localhost:3001/api
+5. Check that there is data in the database tables (see below for connection details). Also review the api documentation at http://localhost:3001/api
 6. Load the postman collection from the root directory 'Engineering.postman_collection.json' and test the api endpoints
+
+#### Connection details
+Credentials for your database GUI 
+
+HOST=localhost
+PORT=5433
+USER=postgres
+PASSWORD=postgres
+NAME=eurocamp_api
 
 
 # Tasks
