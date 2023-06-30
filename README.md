@@ -22,8 +22,8 @@ Please follow the installation instructions carefully and don't spend any more t
 
 1. Git clone the repository `git clone https://github.com/ECliamb/engineering-test.git`
 2. `cd` into the engineering-test directory
-3. run `docker-compose up -d --force-recreate`
-4. run `docker exec -it engineering-test_eurocamp-api_1 npm run seed:run`
+3. run `docker-compose up -d --force-recreate`  (some versions of docker will use docker compose rather than docker-compose)
+4. run `docker exec -it engineering-test_eurocamp-api_1 npm run seed:run` (sometimes the name is different, check with docker ps)
 5. Check that there is data in the database tables (see below for connection details). Also review the api documentation at http://localhost:3001/api
 6. Load the postman collection from the root directory 'Engineering.postman_collection.json' and test the api endpoints
 
