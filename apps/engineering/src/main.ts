@@ -5,9 +5,11 @@ import { AppModule } from './app.module';
 async function bootstrap(): Promise<void> {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
-    allowedHeaders: ['content-type'],
-    origin: 'http://localhost:3001',
-    credentials: true,
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+    credentials: false
   });
   await bootstrapApp(app, 'Engineering', 'api');
 }
