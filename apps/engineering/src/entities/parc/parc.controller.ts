@@ -49,7 +49,6 @@ export class ParcController {
   @ApiCreatedResponse({ type: AllParcResponseContract })
   @ApiBadRequestResponse()
   @Post()
-  async create(@Body() payload): Promise<ParcResponseDto> {
   async create(@Body() payload: {name: string, description: string}): Promise<ParcResponseDto> {
     const parc = await this.parcService.newUser({
       id: uuid(),
