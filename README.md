@@ -39,7 +39,7 @@ NAME=eurocamp_api
 
 # Tasks
 
-Your task is to answer some questions and perform some actions. Send a link with your solution and accompanying notes to engineering@eurocamp.co.uk or your representative. <b>Please not we can't accept zip files containing solutions, please utilise github, dropbox or google drive.</b>
+Your task is to answer some questions and perform some actions. Send a link with your solution and accompanying notes to engineering@eurocamp.co.uk or your representative. <b>Please note we can't accept zip files containing solutions, please utilise github, dropbox or google drive.</b>
 
 With all tasks - **please add comments, utilise tests and submit clear instructions on running your solution.**
 
